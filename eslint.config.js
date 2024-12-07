@@ -1,10 +1,18 @@
 import js from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import stylistic from '@stylistic/eslint-plugin'
+import { FlatCompat } from '@eslint/eslintrc'
+
+const compat = new FlatCompat({
+	baseDirectory: import.meta.dirname
+})
+
+const nextConfig = compat.extends('next/core-web-vitals')
 
 export default tseslint.config(
 	js.configs.recommended,
 	...tseslint.configs.recommendedTypeChecked,
+	...nextConfig,
 	{
 		ignores: ['dist/', 'eslint.config.js']
 	},

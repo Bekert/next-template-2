@@ -1,1 +1,1 @@
-# Typescript Template
+# Next Template 2

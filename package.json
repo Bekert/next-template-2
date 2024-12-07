@@ -1,8 +1,7 @@
 {
-	"name": "typescript-template",
+	"name": "next-template-2",
 	"version": "1.0.0",
 	"description": "",
-	"main": "src/index.ts",
 	"scripts": {
 		"commit": "cz",
 		"pre-commit": "lint-staged",
@@ -12,11 +11,9 @@
 		"lint": "npm run eslint:check && npm run prettier:check",
 		"lint:fix": "npm run eslint:check && npm run prettier:fix",
 		"prepare": "husky",
-		"start": "node --no-warnings=ExperimentalWarning --experimental-strip-types ./src/index.ts",
-		"start:compile": "npm run compile && node ./dist/index.js",
-		"dev": "node --no-warnings=ExperimentalWarning --experimental-strip-types --watch ./src/index.ts",
-		"dev:compile": "tsx watch --no-warnings=ExperimentalWarning ./src/index.ts",
-		"compile": "rm -rf ./built && tsc"
+		"dev": "next dev --turbopack",
+		"build": "next build",
+		"start": "next start"
 	},
 	"config": {
 		"commitizen": {
@@ -32,14 +29,32 @@
 		"*.{js,jsx,ts,tsx,json,css,html}": "prettier --write",
 		"*.{js,jsx,ts,tsx}": "eslint"
 	},
+	"dependencies": {
+		"@emotion/cache": "^11.13.5",
+		"@emotion/react": "^11.13.5",
+		"@emotion/styled": "^11.13.5",
+		"@mui/icons-material": "^6.1.10",
+		"@mui/material": "^6.1.10",
+		"@mui/material-nextjs": "^6.1.9",
+		"@tanstack/react-query": "^5.62.3",
+		"next": "^15.0.4",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"zustand": "^5.0.2"
+	},
 	"devDependencies": {
 		"@commitlint/cli": "^19.6.0",
 		"@commitlint/config-conventional": "^19.6.0",
+		"@eslint/eslintrc": "^3.2.0",
 		"@eslint/js": "^9.16.0",
 		"@stylistic/eslint-plugin": "^2.11.0",
+		"@types/node": "^22.10.1",
+		"@types/react": "^19.0.1",
+		"@types/react-dom": "^19.0.1",
 		"commitizen": "^4.3.1",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^9.16.0",
+		"eslint-config-next": "^15.0.4",
 		"globals": "^15.12.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^15.2.10",
@@ -51,12 +66,12 @@
 	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Bekert/typescript-template"
+		"url": "https://github.com/Bekert/next-template-2"
 	},
 	"author": "Bekert",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/Bekert/typescript-template/issues"
+		"url": "https://github.com/Bekert/next-template-2/issues"
 	},
-	"homepage": "https://github.com/Bekert/typescript-template"
+	"homepage": "https://github.com/Bekert/next-template-2"
 }
